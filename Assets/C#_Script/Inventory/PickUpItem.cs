@@ -10,7 +10,7 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] float pickUpDistance = 1.5f;
     [SerializeField] float ttl = 10f;
 
-    public Item item;
+   // public Item item;
     public int count = 1;
 
     private void Start()
@@ -29,19 +29,19 @@ public class PickUpItem : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
 
-        if (distance < 0.1f)
-        {
-            //*ToDo* should be moved into specified controller rather than 머시기
+        //if (distance < 0.1f)
+        //{
+        //    //*ToDo* should be moved into specified controller rather than 머시기
 
-            if (GameManager.Instance.inventoryContainer != null)
-            {
-                GameManager.Instance.inventoryContainer.Add(item, count);
-            }
-            else
-            {
-                Debug.LogWarning("No Inventory container attached to the game manager");
-            }
-            Destroy(gameObject);
-        }
+        //    if (GameManager.Instance.inventoryContainer != null)
+        //    {
+        //        GameManager.Instance.inventoryContainer.Add(item, count);
+        //    }
+        //    else
+        //    {
+        //        Debug.LogWarning("No Inventory container attached to the game manager");
+        //    }
+        //    Destroy(gameObject);
+        //    }
     }
 }
