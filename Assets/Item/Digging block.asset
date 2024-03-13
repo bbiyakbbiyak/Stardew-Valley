@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30866c53536b06641a0d3a9a1628b8c2, type: 3}
-  m_Name: Pick
+  m_Script: {fileID: 11500000, guid: b9bb2916a5f4b0e40a9b70295184d39f, type: 3}
+  m_Name: Digging block
   m_EditorClassIdentifier: 
-  Name: 
-  stackable: 0
-  icon: {fileID: -1429111043, guid: b054fa0695e3e2249bdf857a746e7388, type: 3}
+  tile: {fileID: 0}
+  type: 0
+  actionType: 0
+  range: {x: 5, y: 4}
+  image: {fileID: 0}

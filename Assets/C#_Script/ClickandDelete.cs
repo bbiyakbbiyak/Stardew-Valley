@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class ClickandDelete : MonoBehaviour
 {
-    CharacterController2D character;
+    PlayerControl character;
     Rigidbody2D rigid2d;
     [SerializeField] float offsetDistance = 1f;
     [SerializeField] float sizeOfInteractableArea = 1.2f;
 
     private void Awake()
     {
-        character = GetComponent<CharacterController2D>();
+        character = GetComponent<PlayerControl>();
         rigid2d = GetComponent<Rigidbody2D>();
     }
 

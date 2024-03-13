@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class CharacterInteractController : MonoBehaviour
 {
-    CharacterController2D characterController;
+    PlayerControl characterController;
     Rigidbody2D rgbd2d;
     [SerializeField] float offsetDistance = 1f;
     [SerializeField] float sizeOfInteractableArea = 1.2f;
-    Character character;
 
     private void Awake()
     {
-        characterController = GetComponent<CharacterController2D>();
+        characterController = GetComponent<PlayerControl>();
         rgbd2d = GetComponent<Rigidbody2D>();
-        character = new Character(); // Character 클래스의 인스턴스를 생성하여 초기화합니다.
     }
 
     private void Update()
@@ -36,7 +34,6 @@ public class CharacterInteractController : MonoBehaviour
             Interactable hit = c.GetComponent<Interactable>();
             if (hit != null)
             {
-                hit.Interact(character);
                 break;
             }
         }

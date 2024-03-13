@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tree
+  - InventoryManager
+  - Canvas
+  - ItemInfo
+  - ItemInfoName
+  - ItemInfoDes
   layers:
   - Default
   - TransparentFX

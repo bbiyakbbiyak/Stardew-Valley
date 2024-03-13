@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterController2D : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rigidbody2d;
@@ -12,7 +12,9 @@ public class CharacterController2D : MonoBehaviour
     public Vector2 lastMotionVector;
     public bool moving;
     new SpriteRenderer renderer;
-    
+    [HideInInspector] public int selectedToolId = 0; //플레이어가 선택한 도구 (-1은 아직 선택 x)
+
+
 
     void Awake()
     {
@@ -72,4 +74,6 @@ public class CharacterController2D : MonoBehaviour
             toolHit?.Hit();
         }
     }
+
+
 }
