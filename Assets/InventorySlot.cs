@@ -13,24 +13,33 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
     void Start()
     {
-       // gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         inventoryManager = GameObject.FindWithTag("InventoryManager").GetComponent<InventoryManager>();
     }
 
-    public void Selected() //선택되면
+    public void Selected() // 선택되면
     {
-        Transform selectedSquare = transform.GetChild(0).GetChild(1); //아이템의 자식 객체인 selectedSquare 가져오기
-        SlotItem slotItme = transform.GetChild(0).gameObject.GetComponent<SlotItem>();
-        selectedSquare.gameObject.SetActive(true);
-    }
-    public void Deselected() //선택되지 않으면
-    {
-        //slotItem.GetChild.clicked = false;
         if (transform.childCount > 0)
         {
-            Transform selectedSquare = transform.GetChild(0).GetChild(1);                               
-            SlotItem slotItme = transform.GetChild(0).gameObject.GetComponent<SlotItem>();
-            selectedSquare.gameObject.SetActive(false);
+            Transform selectedSquare = transform.GetChild(0).Find("SelectedSquare"); // 아이템의 자식 객체인 selectedSquare 가져오기
+            SlotItem slotItem = transform.GetChild(0).gameObject.GetComponent<SlotItem>();
+            if (selectedSquare != null)
+            {
+                selectedSquare.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void Deselected()
+    {
+        if (transform.childCount > 0)
+        {
+            Transform selectedSquare = transform.GetChild(0).Find("SelectedSquare"); // 자식 오브젝트 이름을 사용하여 가져오기
+            SlotItem slotItem = transform.GetChild(0).gameObject.GetComponent<SlotItem>(); // 변수명 오타 수정
+            if (selectedSquare != null && slotItem != null)
+            {
+                selectedSquare.gameObject.SetActive(false);
+            }
         }
     }
 
