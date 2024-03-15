@@ -10,6 +10,7 @@ TagManager:
   - ItemInfo
   - ItemInfoName
   - ItemInfoDes
+  - Farm
   layers:
   - Default
   - TransparentFX

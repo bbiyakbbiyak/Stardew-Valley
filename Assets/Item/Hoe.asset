@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: 
   itemDescription: 
   cost: 0
-  icon: {fileID: 1471438303, guid: a4faee6cc2deb4f4591b7a378c771cf7, type: 3}
+  icon: {fileID: -289073817, guid: a4faee6cc2deb4f4591b7a378c771cf7, type: 3}
   stackable: 1
   isTool: 0
   isCraft: 0

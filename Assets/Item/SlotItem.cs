@@ -50,23 +50,23 @@ public class SlotItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         item = newItem;
         image.sprite = newItem.icon;
-        //RefreshCount();
+        RefreshCount();
 
     }
 
-    //public void RefreshCount() // 아이템의 개수가 증가하는 컴포넌트임.
-    //{
-    //    return;
-    //    countText.text = count.ToString();
-    //    if(count >= 1)
-    //    {
-    //        countText.gameObject.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        countText.gameObject.SetActive(false);
-    //    }
-    //}
+    public void RefreshCount() // 아이템의 개수가 증가하는 컴포넌트임.
+    {
+        return;
+        countText.text = count.ToString();
+        if (count >= 1)
+        {
+            countText.gameObject.SetActive(true);
+        }
+        else
+        {
+            countText.gameObject.SetActive(false);
+        }
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {

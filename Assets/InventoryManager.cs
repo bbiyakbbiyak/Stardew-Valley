@@ -75,7 +75,7 @@ public class InventoryManager : MonoBehaviour
             SlotItem itemInSlot = slot.GetComponentInChildren<SlotItem>();
             if (itemInSlot != null && itemInSlot.item == item && itemInSlot.item.stackable && itemInSlot.count <= maxStackedItems) {
                 itemInSlot.count++;
-                //itemInSlot.RefreshCount();
+                itemInSlot.RefreshCount();
                 return true;
             }
         }
@@ -92,7 +92,7 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    void SpawnItem(Item item, InventorySlot slot)
+    void SpawnItem(Item item, InventorySlot slot) //아이템 생성
     {
         GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
         SlotItem slotItem = newItemGo.GetComponent<SlotItem>();

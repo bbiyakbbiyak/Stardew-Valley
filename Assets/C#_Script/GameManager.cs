@@ -10,15 +10,19 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public bool playerMouseButtonActive; //플레이어가 일하는 동작을 할것인지 확인
     [HideInInspector] public bool menuLock; //인벤토리 메뉴 잠금
-
+    public static GameManager Instance;
     //제작한 아이템 드래그
     [HideInInspector] public bool dragCraftItem;
     [HideInInspector] public Item craftItem;
-
+    [SerializeField] public PlayerControl player;
 
     private Item tempItem;
     void Awake()
     {
+        if(Instance == null)
+            Instance = this;
+        else
+            Destroy(this);
         //플레이어 정보 불러오기
         //player = SaveSystem.Load("Default");
         //Debug.Log("현재 플레이어: " + player.name);

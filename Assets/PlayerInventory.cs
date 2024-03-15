@@ -31,7 +31,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void InventoryButton()
     {
-        if (Input.GetKeyDown("i"))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             inputICount++;
         }
@@ -76,9 +76,9 @@ public class PlayerInventory : MonoBehaviour
     {
         toolbar.SetActive(true);
         inventory.SetActive(false);
-        craftMenu.SetActive(false);
-        exitMenu.SetActive(false);
-        menuButton.SetActive(false);
+        //craftMenu.SetActive(false);
+        //exitMenu.SetActive(false);
+        //menuButton.SetActive(false);
 
         //toolbar에 있는 slot 옮기기
         while (inventoryToolbar.transform.childCount > 0)
